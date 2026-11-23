@@ -1,17 +1,21 @@
 public class Admin extends User {
-    public Admin(String userID, String name, String email, String password) {
-        super(userID, name, email, password);
+    final private String USER_TYPE;
+
+    public Admin(String userID, String email, String password) {
+        super(userID, email, password);
+        this.USER_TYPE = "ADMIN";
     }
 
-    public void addCandidate(Candidate candidate) {
+    private void addCandidate(Candidate candidate) {
     }
 
-    public void registerVoter(Voter voter) {
+    private void registerVoter(Voter voter) {
+        User user = new Voter("name", "age","Admin", "user");
     }
 
-    public void openElection(Election election) {
+    private void openElection(Election election) {
     }
 
-    public void closeElection(Election election) {
+    private void closeElection(Election election) {
     }
 }

@@ -76,7 +76,13 @@ public void setEmail(String email){
     if (verifyEmail(email)){
         this.email = email;
     }
+
 }
+
+
+abstract public void canVote();
+abstract public void whoAreYou();
+abstract public void login();
 
 
 

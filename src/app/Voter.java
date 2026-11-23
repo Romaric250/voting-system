@@ -1,6 +1,8 @@
 public class Voter extends User {
-    public Voter(String userID, String name, String email, String password) {
-        super(userID, name, email, password);
+    private String userType;
+    public Voter(String userID, String email, String password, String userType) {
+        super(userID, email, password);
+        this.userType = userType;
     }
 
     public void castVote(Ballot ballot) {

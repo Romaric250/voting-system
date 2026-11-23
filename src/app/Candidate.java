@@ -1,4 +1,4 @@
-public class Candidate {
+public class Candidate extends User{
     private String name;
     private String position;
 
