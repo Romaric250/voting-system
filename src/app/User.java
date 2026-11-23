@@ -8,12 +8,9 @@ public abstract class User {
         if (userID == null || userID.trim().isEmpty() || userID.length() != 8){
             System.err.println("Invalide userid");
         }
-          if (password == null || password.trim().isEmpty() || password.length() != 8 ){
-            System.err.println("Password does not have the correct format. Please try again");
-        }
-    
-          if (email == null || email.trim().isEmpty() || !email.contains(".") || !email.contains("@") || !email.endsWith("@ashesi.edu.gh")){
-            System.err.println("Invalid email, please check the correct format. e.g romaric.lonfonyuy@ashesi.edu.gh");
+        if(!verifyEmail(email) && !verifyPassord(password)){
+System.err.println("invalid email or passow");
+//exit
         }
 
 
@@ -26,6 +23,28 @@ public abstract class User {
         this("00000","John doe","ashesioop2029");
 
     }
+
+
+    public boolean verifyPassord(String password){
+          if (password == null || password.trim().isEmpty() || password.length() != 8 ){
+            System.err.println("Password does not have the correct format. Please try again");
+            return false;
+        }
+        return true;
+    }
+
+
+    public boolean verifyEmail(String verifyEmail){
+        
+          if (email == null || email.trim().isEmpty() || !email.contains(".") || !email.contains("@") || !email.endsWith("@ashesi.edu.gh")){
+            System.err.println("Invalid email, please check the correct format. e.g romaric.lonfonyuy@ashesi.edu.gh");
+            return false;
+        }
+        return true;
+
+    }
+
+
 
 
     private String hashPassword(String password){
@@ -42,4 +61,25 @@ public abstract class User {
     public String getPassword(){
         return this.password;
     }
+    public void setPassword(String password){
+
+        if (verifyPassord(password)){
+
+        
+        this.password = password;
+        }
+
+        // fail silently
+    }
+public void setEmail(String email){
+
+    if (verifyEmail(email)){
+        this.email = email;
+    }
+}
+
+
+
+
+
 }
