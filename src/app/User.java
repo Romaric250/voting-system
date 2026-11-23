@@ -1,15 +1,32 @@
 public abstract class User {
    final private String USER_ID;
-    private String name;
     private String email;
     private String password;
 
-    public User(String userID, String name, String email, String password) {
+    public User(String userID, String email, String password) {
+
+        if (userID == null || userID.trim().isEmpty() || userID.length() != 8){
+            System.err.println("Invalide userid");
+        }
+          if (password == null || password.trim().isEmpty() || password.length() != 8 ){
+            System.err.println("Password does not have the correct format. Please try again");
+        }
+    
+          if (email == null || email.trim().isEmpty() || !email.contains(".") || !email.contains("@") || !email.endsWith("@ashesi.edu.gh")){
+            System.err.println("Invalid email, please check the correct format. e.g romaric.lonfonyuy@ashesi.edu.gh");
+        }
+
+
         this.USER_ID= userID;
-        this.name = name;
         this.email = email;
         this.password = hashPassword(password);
     }
+
+    public User(){
+        this("00000","John doe","ashesioop2029");
+
+    }
+
 
     private String hashPassword(String password){
         
