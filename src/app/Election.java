@@ -17,6 +17,7 @@ public class Election {
     }
 
     public void submitBallot(Voter voter, Ballot ballot) {
+        
     }
 
     public void getResults() {

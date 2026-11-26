@@ -6,7 +6,11 @@ public class Admin extends User {
         this.USER_TYPE = "ADMIN";
     }
 
-    private void addCandidate(Candidate candidate) {
+    private void addCandidate() {
+        Candidate newCandidate = new Candidate(USER_TYPE, USER_TYPE);
+
+        System.out.println("canditate saved to db");
+
     }
 
     private void registerVoter(Voter voter) {

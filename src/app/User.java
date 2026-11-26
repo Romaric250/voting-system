@@ -2,12 +2,18 @@ public abstract class User {
    final private String USER_ID;
     private String email;
     private String password;
+    private String name;
 
-    public User(String userID, String email, String password) {
+    public User(String userID, String email, String password, String name) {
 
         if (userID == null || userID.trim().isEmpty() || userID.length() != 8){
             System.err.println("Invalide userid");
         }
+        if (name == null || name.trim().isEmpty()){
+            System.err.println("Invalid name;");
+        }
+
+
         if(!verifyEmail(email) && !verifyPassord(password)){
 System.err.println("invalid email or passow");
 //exit
@@ -17,10 +23,11 @@ System.err.println("invalid email or passow");
         this.USER_ID= userID;
         this.email = email;
         this.password = hashPassword(password);
+        this.name = name;
     }
 
     public User(){
-        this("00000","John doe","ashesioop2029");
+        this("00000","John doe","ashesioop2029", "name");
 
     }
 
@@ -84,9 +91,9 @@ public void setEmail(String email){
 }
 
 
-abstract public void canVote();
+abstract public boolean canVote();
 abstract public void whoAreYou();
-abstract public void login();
+abstract public boolean login();
 
 
 
