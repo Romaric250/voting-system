@@ -52,6 +52,10 @@ System.err.println("invalid email or passow");
         return "hashed password";
     }
 
+    private String unHassPassword(String password){
+        return "unhashed password";
+    }
+
     public String getUserID(){
         return  this.USER_ID;
     }
