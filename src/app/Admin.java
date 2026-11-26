@@ -18,8 +18,16 @@ public class Admin extends User {
     }
 
     private void openElection(Election election) {
+
     }
 
     private void closeElection(Election election) {
     }
+
+    private void saveCandidateToDB (){
+        // save user to db
+
+    }
+
+  // functions to save data to csv
 }
